@@ -37,8 +37,15 @@ brand = st.sidebar.selectbox(
     ["All"] + sorted(df['Brand'].dropna().unique())
 )
 
-# Product search (better than dropdown)
+# Product search
 product_search = st.sidebar.text_input("🔎 Search Product")
+
+# 👉 SHOW EXAMPLES (IMPORTANT)
+st.sidebar.markdown("### 💡 Example Products")
+sample_products = df['Product_Name'].dropna().unique()[:10]
+
+for p in sample_products:
+    st.sidebar.write(f"• {p}")
 
 # -----------------------------
 # 🔹 APPLY FILTERS
